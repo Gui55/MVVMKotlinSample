@@ -12,30 +12,27 @@ class UserViewModel : ViewModel() {
 
     private var mutableMsg = MutableLiveData<String>()
 
-    var msg : LiveData<String> = mutableMsg
+    var msg: LiveData<String> = mutableMsg
 
-    fun configureMessage(name: String, companyName: String){
-
+    fun configureMessage(name: String, companyName: String) {
         val user = User(name, companyName)
-
-        if(areFieldsValid(user)){
-
-            var result = repository.login(user)
-
-            if(result){
-                mutableMsg.value = "${user.name}, Login MVVM success"
-            } else {
-                mutableMsg.value = "${user.name}, Login MVVM failure"
+        when (areFieldsValid(user)) {
+            true -> {
+                if (repository.login(user)) {
+                    mutableMsg.value = "${user.name}, Welcome, MVVM success"
+                } else {
+                    mutableMsg.value = "${user.name}, Sorry ,MVVM failure"
+                }
             }
 
+            false -> {
+                mutableMsg.value = "Invalid credentials"
+            }
         }
-
     }
 
-    fun areFieldsValid(user: User) : Boolean{
-
+    private fun areFieldsValid(user: User): Boolean {
         return user.name.isNotEmpty() && user.companyName.isNotEmpty()
-
     }
 
 }

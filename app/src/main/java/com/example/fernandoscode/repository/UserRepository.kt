@@ -5,7 +5,7 @@ import com.example.fernandoscode.model.User
 
 class UserRepository {
 
-    fun login(user: User) : Boolean{
+    fun login(user: User): Boolean {
 
         return APIMock.login(user)
 

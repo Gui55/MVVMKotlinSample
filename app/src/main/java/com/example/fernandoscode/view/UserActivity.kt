@@ -11,27 +11,32 @@ import kotlinx.android.synthetic.main.activity_user.*
 
 class UserActivity : AppCompatActivity() {
 
-    private lateinit var userViewModel : UserViewModel
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
-
-        doLogin()
-
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-
-        userViewModel.msg.observe(this, Observer {
-            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-        })
-
+        inItObserver()
+        doLoginListner()
     }
 
-    private fun doLogin() {
+    private fun inItObserver() {
+        userViewModel.msg.observe(this, Observer {
+            invokeMessage(it)
+        })
+    }
+
+    private fun invokeMessage(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun doLoginListner() {
         button.setOnClickListener {
-
-            userViewModel.configureMessage(edit_name.text.toString(), edit_company_name.text.toString())
-
+            userViewModel.configureMessage(
+                edit_name.text.toString(),
+                edit_company_name.text.toString()
+            )
         }
     }
 }
