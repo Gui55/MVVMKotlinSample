@@ -1,10 +1,10 @@
-package com.example.fernandoscode.viewmodel
+package com.tcs.mvvmsample.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.fernandoscode.model.User
-import com.example.fernandoscode.repository.UserRepository
+import com.tcs.mvvmsample.model.User
+import com.tcs.mvvmsample.repository.UserRepository
 
 class UserViewModel : ViewModel() {
 

@@ -1,12 +1,12 @@
-package com.example.fernandoscode.view
+package com.tcs.mvvmsample.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.fernandoscode.R
-import com.example.fernandoscode.viewmodel.UserViewModel
+import com.tcs.mvvmsample.R
+import com.tcs.mvvmsample.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.activity_user.*
 
 class UserActivity : AppCompatActivity() {

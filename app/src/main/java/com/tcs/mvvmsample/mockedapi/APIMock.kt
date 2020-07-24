@@ -1,6 +1,6 @@
-package com.example.fernandoscode.mockedapi
+package com.tcs.mvvmsample.mockedapi
 
-import com.example.fernandoscode.model.User
+import com.tcs.mvvmsample.model.User
 
 class APIMock {
 

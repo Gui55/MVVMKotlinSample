@@ -1,4 +1,4 @@
-package com.example.fernandoscode
+package com.tcs.mvvmsample
 
 import org.junit.Test
 
