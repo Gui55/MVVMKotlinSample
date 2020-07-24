@@ -1,4 +1,4 @@
-package com.example.fernandoscode.repository
+package com.example.fernandoscode.mockedapi
 
 import com.example.fernandoscode.model.User
 
